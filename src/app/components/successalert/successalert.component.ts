@@ -10,7 +10,6 @@ export class SuccessalertComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    alert('success');
   }
 
 }
