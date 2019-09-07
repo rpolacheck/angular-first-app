@@ -1,0 +1,7 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="onToggle()">Display Details</button>
+  <p *ngIf="showGame">Favorite Board Games: Agricola</p>
+  <div *ngFor="let logs of log; let index = index" [ngStyle]="{backgroundColor: index >= 5 ? 'blue' : 'transparent'}" [ngClass]="{'white-text': index >= 5}">
+    {{ logs }}
+  </div>
+</div>
