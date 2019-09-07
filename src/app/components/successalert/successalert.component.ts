@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./successalert.component.css']
 })
 export class SuccessalertComponent implements OnInit {
+  userName = '';
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  updateUser() {
+    this.userName = '';
+  }
 }

@@ -11,8 +11,10 @@ export class ServerComponent implements OnInit {
   serverStatus = 'offline';
   serverCreationStatus = 'No server was created';
   serverName = '';
+  isServerCreated = false;
 
   constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
@@ -26,10 +28,15 @@ export class ServerComponent implements OnInit {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'Server was created!';
+    this.isServerCreated = true;
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   onUpdateServerName(event: any) {
     this.serverName = event.target.value;
+  }
+
+  getColor() {
+    return this.serverStatus === 'online' ? 'green' : 'red';
   }
 }
